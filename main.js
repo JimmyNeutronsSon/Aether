@@ -60,8 +60,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // ── Cycle Landing Phrases ─────────────────────────
   const phrases = [
     "Aether f*cks iboss",
-    "A RHMS original",
-    "wheres Mr. Rivera?"
+    "An RHMS original",
+    "Where's Mr. Rivera?",
+    "Made by a monkey",
+    "Unblock your true potential",
+    "Bypassing firewalls with style"
   ];
   let currentPhraseIndex = 0;
   const heroSub = document.getElementById('hero-sub');
