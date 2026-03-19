@@ -5,48 +5,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  // ── Navbar scroll effect ────────────────────────
-  const navbar = document.getElementById('navbar');
-
-  const handleScroll = () => {
-    if (window.scrollY > 40) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
-    }
-  };
-
-  window.addEventListener('scroll', handleScroll, { passive: true });
-
-  // ── Mobile menu toggle ──────────────────────────
-  const mobileToggle = document.getElementById('mobile-menu-toggle');
-  const navLinks = document.getElementById('nav-links');
-
-  mobileToggle.addEventListener('click', () => {
-    mobileToggle.classList.toggle('open');
-    navLinks.classList.toggle('open');
-  });
-
-  // Close mobile menu on link click
-  navLinks.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-      mobileToggle.classList.remove('open');
-      navLinks.classList.remove('open');
-    });
-  });
-
-  // ── Nav link active state ───────────────────────
-  const navLinkElements = document.querySelectorAll('.nav-link');
-  // Just set active based on current window location
-  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-  navLinkElements.forEach(link => {
-    const href = link.getAttribute('href');
-    if (href === currentPath) {
-      link.classList.add('active');
-    } else {
-      link.classList.remove('active');
-    }
-  });
+  // The navbar was removed in previous versions, so we don't need scroll or active link logic here anymore.
 
   // ── YouTube background — ensure it keeps playing ─
   // The iframe is set to autoplay+mute+loop in the URL params.
