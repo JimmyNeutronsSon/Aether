@@ -58,6 +58,26 @@ fastify.register(fastifyStatic, {
 	decorateReply: false,
 });
 
+// ── Music Proxy Route ───────────────────────────
+// To bypass COEP/CORS specifically for Saavn resources
+fastify.get("/proxy", async (request, reply) => {
+  const url = request.query.url;
+  if (!url) return reply.code(400).send("No URL provided");
+  
+  try {
+    const res = await fetch(url);
+    const contentType = res.headers.get("content-type");
+    const data = await res.arrayBuffer();
+    
+    reply.type(contentType)
+         .header("Access-Control-Allow-Origin", "*")
+         .header("Cross-Origin-Resource-Policy", "cross-origin")
+         .send(Buffer.from(data));
+  } catch (err) {
+    reply.code(500).send("Proxy error");
+  }
+});
+
 fastify.setNotFoundHandler((res, reply) => {
 	return reply.code(404).type("text/html").sendFile("404.html");
 });

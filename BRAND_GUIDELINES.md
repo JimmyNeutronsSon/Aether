@@ -1,4 +1,4 @@
-# Aether — Color Palette & Theme Guide
+# Welkin — Color Palette & Theme Guide
 
 > Derived from an aerial cloudscape photograph — an above-the-clouds perspective with deep blue skies and billowing white cumulus clouds.
 
@@ -150,7 +150,7 @@
 
 ## 🎭 Theme Summary for LLM Prompt
 
-> **Theme Name:** Aether  
+> **Theme Name:** Welkin  
 > **Mood:** Ethereal, expansive, clean, premium, heavenly  
 > **Inspiration:** Above-the-clouds aerial view — deep blue stratosphere fading into brilliant white cumulus  
 > **Personality:** Calm confidence, clarity, openness, trustworthiness  

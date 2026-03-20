@@ -130,13 +130,14 @@ window.initSidebar = function() {
       </div>
       <aside id="glass-sidebar" class="glass-sidebar">
         <div class="sidebar-header">
-          <a href="index.html" class="logo">Aether<span class="logo-dot">.</span></a>
+          <a href="index.html" class="logo">Welkin<span class="logo-dot">.</span></a>
           <button id="sidebar-close" class="sidebar-close">&times;</button>
         </div>
         <nav class="sidebar-nav">
           <a href="index.html" class="sidebar-link">Home</a>
           <a href="games.html" class="sidebar-link">Games</a>
           <a href="browse.html" class="sidebar-link">Browse</a>
+          <a href="#" class="sidebar-link" id="music-toggle">Music</a>
         </nav>
       </aside>
       <div id="sidebar-overlay" class="sidebar-overlay"></div>

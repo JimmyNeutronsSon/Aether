@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════
-   AETHER — Main JavaScript
+   WELKIN — Main JavaScript
    Video background + UI interactions
    ═══════════════════════════════════════════════════ */
 
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ── Cycle Landing Phrases ─────────────────────────
   const phrases = [
-    "Aether f*cks iboss",
+    "Welkin f*cks iboss",
     "An RHMS original",
     "Where's Mr. Rivera?",
     "Made by a monkey",

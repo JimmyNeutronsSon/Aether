@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: aether-backend
+    name: welkin-backend
     env: node
     plan: free
     branch: main
