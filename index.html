@@ -12,6 +12,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "/lib/three.module.js",
+        "three/examples/jsm/loaders/OBJLoader.js": "/lib/OBJLoader.js"
+      }
+    }
+  </script>
 </head>
 
 <body>
@@ -20,10 +28,8 @@
   <!-- ═══════════════════════════════════════════════ -->
   <section class="hero" id="hero">
     <!-- New Local Video Background -->
-    <div class="hero-bg" id="video-container">
-      <video id="yt-bg"
-        src="226040_medium.mp4"
-        autoplay loop muted playsinline></video>
+    <div class="hero-bg" id="canvas-container">
+      <!-- 3D Cloud Canvas injected here -->
     </div>
 
     <div class="hero-content">
@@ -69,6 +75,7 @@
     </div>
   </footer>
 
+  <script type="module" src="3d-cloud.js"></script>
   <script src="main.js"></script>
   <script src="music.js"></script>
   <script src="sidebar.js"></script>

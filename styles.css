@@ -280,27 +280,18 @@ button { cursor: pointer; border: none; background: none; font: inherit; color: 
 /* ── Background / Video Container ──────────────── */
 .hero-bg {
   position: absolute;
-  inset: -20px; /* oversized to hide YT branding at edges */
+  inset: 0;
   z-index: 0;
   overflow: hidden;
-  filter: blur(4px);
-  -webkit-filter: blur(4px);
 }
 
-#yt-bg {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  /* Scale up to cover the oversized container and hide YT UI */
-  width: 120vw;
-  height: 120vh;
-  min-width: 120%;
-  min-height: 120%;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  border: none;
-  object-fit: cover;
+#canvas-container {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
+
+/* Video background styles removed */
 
 /* Gradient overlay to ensure text readability */
 .hero::before {

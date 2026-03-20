@@ -7,7 +7,9 @@ async function handleRequest(event) {
 	const url = new URL(event.request.url);
 	
 	// Skip proxying for our own assets directly
-	if (url.pathname.startsWith("/proxy")) {
+	if (url.pathname.startsWith("/proxy") || 
+        url.pathname.endsWith(".obj") || 
+        url.pathname.includes("3d-cloud.js")) {
 		return fetch(event.request);
 	}
 

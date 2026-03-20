@@ -12,6 +12,14 @@
   
   <script src="/scram/scramjet.all.js"></script>
   <script src="/baremux/index.js"></script>
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "/lib/three.module.js",
+        "three/examples/jsm/loaders/OBJLoader.js": "/lib/OBJLoader.js"
+      }
+    }
+  </script>
   
   <style>
     :root {
@@ -252,7 +260,7 @@
 
   <main class="browser-content">
     <div class="empty-state" id="empty-state">
-      <video class="empty-video-bg" src="226040_medium.mp4" autoplay loop muted playsinline></video>
+      <div id="canvas-container" class="empty-video-bg"></div>
       <div class="empty-bg-overlay"></div>
       <div class="empty-content">
         <div class="empty-logo">Welkin<span>.</span></div>
@@ -268,6 +276,7 @@
 
   <script src="register-sw.js"></script>
   <script src="search.js"></script>
+  <script type="module" src="3d-cloud.js"></script>
   <script src="music.js"></script>
   <script src="browse.js"></script>
   <script src="sidebar.js"></script>
