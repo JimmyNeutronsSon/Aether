@@ -3,7 +3,7 @@ services:
     name: welkin-backend
     env: node
     plan: free
-    branch: main
+    branch: Update_v0.1
     buildCommand: pnpm install
     startCommand: npm start
     envVars:
