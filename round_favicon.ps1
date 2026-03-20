@@ -1,6 +1,6 @@
 Add-Type -AssemblyName System.Drawing
 
-[System.Drawing.Image]$img = [System.Drawing.Image]::FromFile("c:\Users\sohel\OneDrive\Documents\Projects\Websites\Aether\favicon.png")
+[System.Drawing.Image]$img = [System.Drawing.Image]::FromFile("c:\Users\sohel\OneDrive\Documents\Projects\Websites\Welkin\favicon.png")
 $width = $img.Width
 $height = $img.Height
 
@@ -28,7 +28,7 @@ $graphics.DrawImage($img, 0, 0, $width, $height)
 $img.Dispose()
 $graphics.Dispose()
 
-$bitmap.Save("c:\Users\sohel\OneDrive\Documents\Projects\Websites\Aether\favicon_rounded.png", [System.Drawing.Imaging.ImageFormat]::Png)
+$bitmap.Save("c:\Users\sohel\OneDrive\Documents\Projects\Websites\Welkin\favicon_rounded.png", [System.Drawing.Imaging.ImageFormat]::Png)
 $bitmap.Dispose()
 
 Write-Output "Favicon corner rounding completed."

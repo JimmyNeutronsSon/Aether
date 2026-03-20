@@ -100,7 +100,8 @@
             searchTimeout = setTimeout(async () => {
                 resultsList.innerHTML = '<div style="text-align:center; padding: 20px; opacity: 0.5;">Searching...</div>';
                 try {
-                    const res = await fetch(`${MUSIC_API}/search/songs?query=${encodeURIComponent(query)}&limit=20`);
+                    const searchUrl = `${MUSIC_API}/search/songs?query=${encodeURIComponent(query)}&limit=20`;
+                    const res = await fetch(wrapUrl(searchUrl));
                     const data = await res.json();
                     if (data.status === 'SUCCESS' && data.data.results) {
                         currentSongs = data.data.results;
