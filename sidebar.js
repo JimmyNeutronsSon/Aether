@@ -1,7 +1,7 @@
-window.initSidebar = function() {
-    if (document.getElementById('glass-sidebar')) return; // Already injected
-    
-    const sidebarCSS = `
+window.initSidebar = function () {
+  if (document.getElementById('glass-sidebar')) return; // Already injected
+
+  const sidebarCSS = `
     .sidebar-trigger {
       position: fixed;
       top: 50%;
@@ -118,11 +118,11 @@ window.initSidebar = function() {
       pointer-events: auto;
     }
     `;
-    const style = document.createElement('style');
-    style.textContent = sidebarCSS;
-    document.head.appendChild(style);
-  
-    const sidebarHTML = `
+  const style = document.createElement('style');
+  style.textContent = sidebarCSS;
+  document.head.appendChild(style);
+
+  const sidebarHTML = `
       <div id="sidebar-trigger" class="sidebar-trigger" title="Menu">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <polyline points="9 18 15 12 9 6"></polyline>
@@ -136,60 +136,61 @@ window.initSidebar = function() {
         <nav class="sidebar-nav">
           <a href="index.html" class="sidebar-link">Home</a>
           <a href="games.html" class="sidebar-link">Games</a>
+          <a href="retro-bowl.html" class="sidebar-link">Retro Bowl</a>
           <a href="browse.html" class="sidebar-link">Browse</a>
           <a href="#" class="sidebar-link" id="music-toggle">Music</a>
         </nav>
       </aside>
       <div id="sidebar-overlay" class="sidebar-overlay"></div>
     `;
-    document.body.insertAdjacentHTML('beforeend', sidebarHTML);
-  
-    const sidebar = document.getElementById('glass-sidebar');
-    const trigger = document.getElementById('sidebar-trigger');
-    const closeBtn = document.getElementById('sidebar-close');
-    const overlay = document.getElementById('sidebar-overlay');
-  
-    const openSidebar = () => {
-      sidebar.classList.add('open');
-      overlay.classList.add('open');
-    };
-  
-    const closeSidebar = () => {
-      sidebar.classList.remove('open');
-      overlay.classList.remove('open');
-    };
-  
-    trigger.addEventListener('click', openSidebar);
-    closeBtn.addEventListener('click', closeSidebar);
-    overlay.addEventListener('click', closeSidebar);
+  document.body.insertAdjacentHTML('beforeend', sidebarHTML);
 
-    // Page Transition
-    if(!document.body.classList.contains('page-transition-enter')){
-      document.body.classList.add('page-transition-enter');
-    }
+  const sidebar = document.getElementById('glass-sidebar');
+  const trigger = document.getElementById('sidebar-trigger');
+  const closeBtn = document.getElementById('sidebar-close');
+  const overlay = document.getElementById('sidebar-overlay');
+
+  const openSidebar = () => {
+    sidebar.classList.add('open');
+    overlay.classList.add('open');
+  };
+
+  const closeSidebar = () => {
+    sidebar.classList.remove('open');
+    overlay.classList.remove('open');
+  };
+
+  trigger.addEventListener('click', openSidebar);
+  closeBtn.addEventListener('click', closeSidebar);
+  overlay.addEventListener('click', closeSidebar);
+
+  // Page Transition
+  if (!document.body.classList.contains('page-transition-enter')) {
+    document.body.classList.add('page-transition-enter');
+  }
 };
 
 // Instead of waiting for DOMContentLoaded blindly, check if document is already ready
 if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', window.initSidebar);
+  document.addEventListener('DOMContentLoaded', window.initSidebar);
 } else {
-    window.initSidebar();
+  window.initSidebar();
 }
 
 // Global click delegation for page transitions and games script interception
 document.addEventListener('click', (e) => {
-    const link = e.target.closest('a');
-    if (!link) return;
-    const href = link.getAttribute('href');
-    if (!href || href.startsWith('http') || link.getAttribute('target') === '_blank' || href.startsWith('#')) return;
+  const link = e.target.closest('a');
+  if (!link) return;
+  const href = link.getAttribute('href');
+  if (!href || href.startsWith('http') || link.getAttribute('target') === '_blank' || href.startsWith('#')) return;
 
-    e.preventDefault();
+  e.preventDefault();
 
-    document.body.classList.remove('page-transition-enter');
-    document.body.classList.add('page-transition-exit');
-    
-    // Delay navigation to allow transition to play
-    setTimeout(() => {
+  document.body.classList.remove('page-transition-enter');
+  document.body.classList.add('page-transition-exit');
+
+  // Delay navigation to allow transition to play
+  setTimeout(() => {
     window.location.href = href;
-    }, 700);
+  }, 700);
 });
